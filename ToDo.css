@@ -1,0 +1,152 @@
+    /* Включение отступа и границы в общую ширину и высоту элемента */
+    
+    * {
+        box-sizing: border-box;
+    }
+    /* Удалите поля и отступы из списка */
+    
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    /* Стиль элементов списка */
+    
+    ul li {
+        width: 50%;
+        cursor: pointer;
+        position: relative;
+        padding: 12px 8px 12px 40px;
+        background: rgb(149, 226, 245);
+        font-size: 18px;
+        transition: 0.2s;
+    }
+    /* Установить все нечетные элементы списка в другой цвет (зебра)
+                
+                ul li:nth-child(odd) {
+                    background: #f9f9f9;
+                } */
+    /* Более темный фон-цвет при наведении */
+    
+    ul li:hover {
+        background: #ddd;
+    }
+    /* При нажатии на кнопку, добавить цвет фона и вычеркнуть текст */
+    
+    ul li.checked {
+        width: 50%;
+        background: #888;
+        color: #fff;
+        text-decoration: line-through;
+    }
+    /* Добавить "checked" отметить при нажатии на кнопку */
+    
+    ul li.checked::before {
+        width: 50%;
+        content: '';
+        position: absolute;
+        border-color: #fff;
+        border-style: solid;
+        border-width: 0 2px 2px 0;
+        top: 10px;
+        left: 16px;
+        transform: rotate(45deg);
+        height: 15px;
+        width: 7px;
+    }
+    /* Стиль кнопки "Закрыть" */
+    
+    .close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 12px 16px 12px 16px;
+    }
+    
+    .close:hover {
+        background-color: #f44336;
+        color: white;
+    }
+    /* Стиль заголовка */
+    
+    .header {
+        width: 50%;
+        padding: 30px 40px;
+        color: black;
+        text-align: left;
+    }
+    /* Очистить поплавки после заголовка */
+    
+    .header:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    /* Стиль ввода */
+    
+    input {
+        /* border-radius: 3px; */
+        margin: 0;
+        border: none;
+        border-radius: 0;
+        width: 90%;
+        padding: 10px;
+        float: left;
+        font-size: 16px;
+    }
+    /* Стиль кнопки "Добавить" */
+    
+    .add {
+        padding: 10px;
+        width: 10%;
+        background: #25d833;
+        float: left;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 3px;
+        border-color: chartreuse;
+    }
+    
+    .add:hover {
+        background-color: rgb(141, 241, 82);
+    }
+    
+    .delete {
+        width: 10%;
+        background: #d82525;
+        float: right;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 3px;
+        border-color: mediumvioletred;
+    }
+    
+    .delete:hover {
+        background-color: rgb(241, 119, 82);
+    }
+    
+    .all {
+        float: left;
+        font-size: 20px;
+        width: 20%;
+        background-color: #7eeef1;
+        border-color: #7eeef1;
+    }
+    
+    div {
+        width: 50%;
+        background-color: #7eeef1;
+        padding: 30px 40px;
+        color: black;
+        text-align: center;
+    }
+    /* Очистить поплавки после заголовка */
+    
+    div:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
