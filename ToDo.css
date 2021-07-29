@@ -1,47 +1,85 @@
-    /* Включение отступа и границы в общую ширину и высоту элемента */
-    
-    * {
-        box-sizing: border-box;
-    }
-    /* Удалите поля и отступы из списка */
-    
-    ul {
+
+     *{
         margin: 0;
         padding: 0;
-    }
-    /* Стиль элементов списка */
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+     
+      body{
+        width: 100%;
+        height: 100vh;
+        padding: 10px;
+        background: linear-gradient(to bottom, #68EACC 0%, #497BE8 100%);
+      }
+
+    .wrapper{
+        background: #fff;
+        max-width: 400px;
+        width: 100%;
+        margin: 120px auto;
+        padding: 25px;
+        border-radius: 5px;
+        box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+      }
+      .wrapper header{
+        font-size: 30px;
+        font-weight: 600;
+       }
+       .button {
+           display: flex;
+       }
+       .wrapper .Input{
+        margin: 20px 0;
+        width: 100%;
+        display: flex;
+        height: 45px;
+      }
+      .Input input{
+        width: 85%;
+        height: 100%;
+        outline: none;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        font-size: 17px;
+        padding-left: 15px;
+        transition: all 0.3s ease;
+      }
+      .Input input:focus{
+        border-color: #8E49E8; 
+      }  
     
-    ul li {
-        width: 50%;
-        cursor: pointer;
+    .wrapper .todoList{
+        max-height: 250px;
+        overflow-y: auto;
+      }
+    
+      .todoList li{
         position: relative;
-        padding: 12px 8px 12px 40px;
-        background: rgb(149, 226, 245);
-        font-size: 18px;
-        transition: 0.2s;
+        list-style: none;
+        height: 45px;
+        line-height: 45px;
+        margin-bottom: 8px;
+        background: #f2f2f2;
+        border-radius: 3px;
+        padding: 0 15px;
+        cursor: pointer;
+        overflow: hidden;
     }
-    /* Установить все нечетные элементы списка в другой цвет (зебра)
-                
-                ul li:nth-child(odd) {
-                    background: #f9f9f9;
-                } */
-    /* Более темный фон-цвет при наведении */
-    
-    ul li:hover {
-        background: #ddd;
+
+    .todoList li:hover{
+          background: #ddd;
     }
-    /* При нажатии на кнопку, добавить цвет фона и вычеркнуть текст */
-    
+   
     ul li.checked {
-        width: 50%;
+        width: 100%;
         background: #888;
         color: #fff;
         text-decoration: line-through;
     }
-    /* Добавить "checked" отметить при нажатии на кнопку */
     
     ul li.checked::before {
-        width: 50%;
+        width: 100%;
         content: '';
         position: absolute;
         border-color: #fff;
@@ -53,8 +91,7 @@
         height: 15px;
         width: 7px;
     }
-    /* Стиль кнопки "Закрыть" */
-    
+
     .close {
         position: absolute;
         right: 0;
@@ -66,87 +103,85 @@
         background-color: #f44336;
         color: white;
     }
-    /* Стиль заголовка */
     
-    .header {
-        width: 50%;
-        padding: 30px 40px;
-        color: black;
-        text-align: left;
-    }
-    /* Очистить поплавки после заголовка */
-    
-    .header:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-    /* Стиль ввода */
-    
-    input {
-        /* border-radius: 3px; */
-        margin: 0;
-        border: none;
-        border-radius: 0;
-        width: 90%;
-        padding: 10px;
-        float: left;
-        font-size: 16px;
-    }
-    /* Стиль кнопки "Добавить" */
-    
-    .add {
-        padding: 10px;
-        width: 10%;
-        background: #25d833;
+    .footer{
+        padding: 6px 10px;
+        font-weight: 400;
+        width: 25%;
+        color: #fff;
+        height: 100%;
+        margin-left: 5px;
+        float: right;
+        background: #8E49E8;
         float: left;
         text-align: center;
         font-size: 16px;
         cursor: pointer;
-        transition: 0.3s;
+        transition: all 0.3s ease;
+        border-radius: 3px;
+        opacity: 0.6;
+    }
+   
+    .footer:hover {
+        background-color: rgb(62, 12, 128);
+    } 
+
+    
+    .addBttn {
+        width: 20%;
+        height: 100%;
+        color: #fff;
+        margin-left: 5px;
+        background: #13861d;
+        float: left;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
         border-radius: 3px;
         border-color: chartreuse;
+        opacity: 0.6;
     }
     
-    .add:hover {
-        background-color: rgb(141, 241, 82);
-    }
-    
-    .delete {
-        width: 10%;
-        background: #d82525;
-        float: right;
-        text-align: center;
-        font-size: 16px;
-        cursor: pointer;
-        transition: 0.3s;
-        border-radius: 3px;
-        border-color: mediumvioletred;
-    }
-    
-    .delete:hover {
-        background-color: rgb(241, 119, 82);
+    .addBttn:hover {
+        background-color: rgb(22, 119, 46);
     }
     
     .all {
         float: left;
         font-size: 20px;
-        width: 20%;
-        background-color: #7eeef1;
-        border-color: #7eeef1;
+        width: 10%;
+        background-color: #ffffff;
+        border: 0;
+        cursor: pointer;
     }
     
-    div {
-        width: 50%;
-        background-color: #7eeef1;
-        padding: 30px 40px;
-        color: black;
-        text-align: center;
+    .all:hover {
+        color: #2dbbc5;
     }
-    /* Очистить поплавки после заголовка */
     
-    div:after {
-        content: "";
-        display: table;
-        clear: both;
+    .completed {
+        float: left;
+        font-size: 20px;
+        width: 30%;
+        background-color: #ffffff;
+        border: 0;
+        cursor: pointer;
     }
+    
+    .completed:hover {
+        color: #d3283f;
+    }
+    
+    .inProgress {
+        float: left;
+        font-size: 20px;
+        width: 30%;
+        background-color: #ffffff;
+        border: 0;
+        cursor: pointer;
+    }
+    
+    .inProgress:hover {
+        color: #2dbb2d;
+    }  

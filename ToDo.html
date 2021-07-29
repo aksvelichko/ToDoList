@@ -10,23 +10,28 @@
 </head>
 
 <body>
-    <div id="myDIV" class="header">
-        <h2>Мой список дел</h2>
-        <input type="text" id="myInput" placeholder="Название...">
-        <button onclick="newElement()" class="add">Add</button>
+    <div class="wrapper">
+        <header>Мой список дел</header>
+        <div class="Input">
+            <input type="text" id="myInput" placeholder="Название...">
+            <span class="addBttn" onclick="newElement()">Add</span>
+        </div>
 
+
+        <ul class="todoList" id="myUL">
+            <li>  " "</li>
+
+        </ul>
+        <div class="button">
+            <button id="all" class=" all">All</button>
+            <button onclick="completed()" class="completed">Completed</button>
+            <button onclick="inProgress()" class="inProgress">In Progress</button>
+            <button class="footer">Clear All</button>
+        </div>
     </div>
 
-    <ul id="myUL">
-
-    </ul>
-    <div>
-        <button class=" all ">All</button>
-        <button class="completed ">Completed</button>
-        <button class="inProgress ">In Progress</button>
-        <button class="delete ">Delete</button>
-    </div>
 
     <script src="./ToDo.js "></script>
+</body>
 
 </html>
