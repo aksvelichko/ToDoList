@@ -19,12 +19,12 @@ list.addEventListener('click', function (ev) {
 }, false);
 
 
-function inProgress() {
-    for (let i = 0; i < elements.length; i++) {
-        elements[i].hidden = true;
-    }
+// function inProgress() {
+//     for (let i = 0; i < elements.length; i++) {
+//         elements[i].hidden = true;
+//     }
 
-}
+// }
 
 // function completed() {
 
